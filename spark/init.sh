@@ -13,7 +13,7 @@ then
   mkdir spark
   pushd spark > /dev/null
   git init
-  repo=`python -c "print '$SPARK_VERSION'.split('|')[0]"` 
+  repo=`python -c "print '$SPARK_VERSION'.split('|')[0]"`
   git_hash=`python -c "print '$SPARK_VERSION'.split('|')[1]"`
   git remote add origin $repo
   git fetch origin
@@ -23,7 +23,7 @@ then
   popd > /dev/null
 
 # Pre-packaged spark version:
-else 
+else
   case "$SPARK_VERSION" in
     0.7.3)
       if [[ "$HADOOP_MAJOR_VERSION" == "1" ]]; then
@@ -31,21 +31,21 @@ else
       else
         wget http://s3.amazonaws.com/spark-related-packages/spark-0.7.3-prebuilt-cdh4.tgz
       fi
-      ;;    
+      ;;
     0.8.0)
       if [[ "$HADOOP_MAJOR_VERSION" == "1" ]]; then
         wget http://s3.amazonaws.com/spark-related-packages/spark-0.8.0-incubating-bin-hadoop1.tgz
       else
         wget http://s3.amazonaws.com/spark-related-packages/spark-0.8.0-incubating-bin-cdh4.tgz
       fi
-      ;;    
+      ;;
     0.8.1)
       if [[ "$HADOOP_MAJOR_VERSION" == "1" ]]; then
         wget http://s3.amazonaws.com/spark-related-packages/spark-0.8.1-incubating-bin-hadoop1.tgz
       else
         wget http://s3.amazonaws.com/spark-related-packages/spark-0.8.1-incubating-bin-cdh4.tgz
       fi
-      ;;    
+      ;;
     0.9.0)
       if [[ "$HADOOP_MAJOR_VERSION" == "1" ]]; then
         wget http://s3.amazonaws.com/spark-related-packages/spark-0.9.0-incubating-bin-hadoop1.tgz
@@ -123,6 +123,10 @@ else
       else
         wget http://s3.amazonaws.com/spark-related-packages/spark-1.2.1-bin-hadoop2.4.tgz
       fi
+      ;;
+    1.6.3)
+      echo "Downloading Custom Spark Version"
+      wget http://apache.mirrors.tds.net/spark/spark-1.6.3/spark-1.6.3-bin-hadoop1-scala2.11.tgz
       ;;
     *)
       if [[ "$HADOOP_MAJOR_VERSION" == "1" ]]; then
