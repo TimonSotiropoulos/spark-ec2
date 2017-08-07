@@ -128,6 +128,10 @@ else
       echo "Getting version 2.0.2 of Apache SPARK with Hadoop 2..."
       wget http://apache.mirrors.tds.net/spark/spark-2.0.2/spark-2.0.2-bin-hadoop2.4.tgz
       ;;
+    2.1.1)
+      echo "Getting Spark version 2.11"
+      wget http://apache.mirrors.tds.net/spark/spark-2.1.1/spark-2.1.1-bin-hadoop2.4.tgz
+      ;;
     *)
       if [[ "$HADOOP_MAJOR_VERSION" == "1" ]]; then
         wget http://s3.amazonaws.com/spark-related-packages/spark-$SPARK_VERSION-bin-hadoop1.tgz
