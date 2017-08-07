@@ -1,7 +1,7 @@
 #!/bin/bash
-# Creates an AMI for the Spark EC2 scripts starting with a stock Amazon 
+# Creates an AMI for the Spark EC2 scripts starting with a stock Amazon
 # Linux AMI.
-# This has only been tested with Amazon Linux AMI 2014.03.2 
+# This has only been tested with Amazon Linux AMI 2014.03.2
 
 set -e
 
@@ -11,7 +11,7 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 # Dev tools
-sudo yum install -y java-1.7.0-openjdk-devel gcc gcc-c++ ant git
+sudo yum install -y java-1.8.0-openjdk-devel gcc gcc-c++ ant git
 # Perf tools
 sudo yum install -y dstat iotop strace sysstat htop perf
 sudo debuginfo-install -q -y glibc
