@@ -129,7 +129,7 @@ else
       wget http://apache.mirrors.tds.net/spark/spark-2.0.2/spark-2.0.2-bin-hadoop2.4.tgz
       ;;
     2.1.1)
-      echo "Getting Spark version 2.11"
+      echo "Getting Spark version 2.1.1"
       wget http://apache.mirrors.tds.net/spark/spark-2.1.1/spark-2.1.1-bin-hadoop2.4.tgz
       ;;
     *)
